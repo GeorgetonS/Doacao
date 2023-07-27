@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title class="titulo">
-      Receber Doaçoes
+      Cadastro de Voluntário
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,8 +14,7 @@
       alt="Imagem Solidariedade"
     />
     <p class="texto-item">
-      Esta precisando de ajuda? Podemos te ajudar! Preencha os campos e fale com
-      um voluntário. 🙏
+      Querendo ajudar? Fale conosco para se cadastrar e virar um voluntário! 🙏
     </p>
     <!-- <ion-button (click)="whats()" expand="block" type="submit"
       >Falar com Voluntario</ion-button> -->
@@ -27,7 +26,7 @@
           <p class="error-message" *ngIf="form.get('nome')?.invalid && form.get('nome')?.dirty">
             Este campo requer {{form.get('nome')?.getError('minlength')?.requiredLength }} caracteres.
           </p>
-          <ion-text class="error-message" color="danger" *ngIf="form.get('nome')?.invalid && buttonClicado">
+          <ion-text class="error-message" color="danger" *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
             Este campo é obrigatorio
           </ion-text>
         </ion-item>
@@ -38,18 +37,14 @@
           <ion-text class="error-message" color="danger" *ngIf="form.get('endereco')?.invalid && form.get('endereco')?.dirty">
             Este campo requer {{form.get('endereco')?.getError('minlength')?.requiredLength }} caracteres.
           </ion-text>
-          <ion-text class="error-message" color="danger" *ngIf="form.get('endereco')?.invalid && buttonClicado">
+          <ion-text class="error-message" color="danger" *ngIf="form.get('endereco')?.invalid && form.get('endereco')?.touched">
             Este campo é obrigatorio
           </ion-text>
         </ion-item>
         <ion-button
           type="submit"
-          >Salvar</ion-button>
-        <!-- <ion-button
-        [disabled]="form.invalid || form.pending"
-        expand="block"
-          type="submit"
-          >Salvar</ion-button> -->
+          >Salvar</ion-button
+        >
       </form>
   </div>
 </ion-content>

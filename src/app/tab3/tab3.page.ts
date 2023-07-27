@@ -14,10 +14,11 @@ export class Tab3Page implements OnInit {
     this.form = formBuilder.group({});
   }
 
-  ngOnInit(){
-        this.form = this.formBuilder.group({
-        nome:['',[Validators.required]],
-        endereco:['',[Validators.required]]});
+  ngOnInit() {
+    this.form = this.formBuilder.group({
+      nome: ['', [Validators.required, Validators.minLength(3)]], 
+      endereco: ['', [Validators.required, Validators.minLength(3)]], 
+    });
   }
 
   whats(){

@@ -24,11 +24,17 @@
         <ion-item>
           <ion-label position="floating">Nome Completo</ion-label>
           <ion-input type="text" formControlName="nome"></ion-input>
+          <p class="error-message" *ngIf="form.get('nome')?.invalid && form.get('nome')?.dirty">
+            Este campo requer {{form.get('nome')?.getError('minlength')?.requiredLength }} caracteres.
+          </p>
         </ion-item>
   
         <ion-item>
           <ion-label position="floating">Endereço</ion-label>
           <ion-input type="text" formControlName="endereco"></ion-input>
+          <p class="error-message" *ngIf="form.get('endereco')?.invalid && form.get('endereco')?.dirty">
+            Este campo requer {{form.get('endereco')?.getError('minlength')?.requiredLength }} caracteres.
+          </p>
         </ion-item>
         <ion-button
           [disabled]="form.invalid || form.pending"
